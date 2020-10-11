@@ -255,7 +255,7 @@ data:
       <match *.containers.**>
         @type coralogix
         privatekey "#{ENV['PRIVATE_KEY']}"
-        appname "$kubernetes.namespace_name"
+        appname "$kubernetes.labels.app"
         subsystemname "$kubernetes.container_name"
         timestamp_key_name time
         is_json true
